@@ -1,21 +1,20 @@
 package com.kapstone.challenge.userservice.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "user_master")
 public class User {
     @Id
@@ -37,11 +36,11 @@ public class User {
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     @Column(name = "create_date", nullable = false)
-    private LocalDate createDate;
+    private LocalDateTime createDate;
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     @Column(name = "updated_date", nullable = false)
-    private LocalDate updatedDate;
+    private LocalDateTime updatedDate;
 
     @Column(nullable = false)
     private boolean active;

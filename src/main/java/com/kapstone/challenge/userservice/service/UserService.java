@@ -9,5 +9,11 @@ import java.util.List;
 
 @Service
 public interface UserService {
-    ApiResponseDTO<?> createUsers(@Valid List<UserRequestDTO> users);
+    ApiResponseDTO<?> createUsers(@Valid UserRequestDTO users);
+
+    ApiResponseDTO<?> getAllUsers();
+
+    ApiResponseDTO<?> getUserById(Long userId);
+
+    ApiResponseDTO<?> deleteUserById(Long userId);
 }
